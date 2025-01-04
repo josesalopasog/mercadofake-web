@@ -1,9 +1,9 @@
-function MyAccount() {
+function MyPurchases() {
     return (
       <h1 className="text-3xl font-bold underline">
-        Mi cuenta
+        Mis Compras
       </h1>
     )
   }
   
-  export default MyAccount
+  export default MyPurchases

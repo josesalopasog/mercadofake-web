@@ -1,4 +1,4 @@
-function MyOrder() {
+function MyCart() {
     return (
       <h1 className="text-3xl font-bold underline">
         Carrito
@@ -6,4 +6,4 @@ function MyOrder() {
     )
   }
   
-  export default MyOrder
+  export default MyCart

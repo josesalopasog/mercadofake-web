@@ -1,9 +1,9 @@
-function MyOrders() {
+function MyProfile() {
     return (
       <h1 className="text-3xl font-bold underline">
-        Mis Compras
+        Mi cuenta
       </h1>
     )
   }
   
-  export default MyOrders
+  export default MyProfile
