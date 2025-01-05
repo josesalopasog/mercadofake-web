@@ -4,7 +4,7 @@ const NavBar = () => {
     const activeStyle = 'underline underline-offset-4'
 
     return (
-        <nav className=" grid w-full bg-[#FFE600] text-[14px] p-2">
+        <nav className=" grid w-full bg-[#FFE600] text-[14px] pt-[10px] pr-[10%] pb-[10px] pl-[10%] ">
             <div className="nav-menu-top flex">
                 <NavLink to='/'>
                     <img src="public\img\logo-mercadofake.png" alt="mercadofake-logo" width={180}/>
