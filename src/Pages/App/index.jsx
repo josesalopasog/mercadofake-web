@@ -7,6 +7,7 @@ import MyCart from '../MyCart'
 import NotFound from '../NotFound'
 import SignIn from '../SignIn'
 import NavBar  from '../../Components/NavBar'
+import Layout from '../../Components/Layout'
 
 import './App.css'
 
@@ -27,7 +28,9 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <AppRoutes/>
+      <Layout>
+        <AppRoutes/>
+      </Layout>
     </BrowserRouter>
   )
 }

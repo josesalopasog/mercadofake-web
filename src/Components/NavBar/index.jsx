@@ -13,9 +13,10 @@ const NavBar = () => {
             </div>
 
             <div className="nav-menu-bottom flex justify-between items-center">
-                <div className="flex w-[100px] ">
+                <div className="flex w-[80px] ">
                     <NavLink to='/'>
-                        Ingresa tu Ubicación
+                        <span className="text-[12px] text-gray-500 ">Ingresa tu </span>
+                        <span>Ubicación</span> 
                     </NavLink>
                 </div>
                 
