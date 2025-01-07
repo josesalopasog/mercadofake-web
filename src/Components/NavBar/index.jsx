@@ -1,13 +1,16 @@
+import { useContext } from "react"
 import { NavLink } from "react-router-dom"
+import CartContext from "../../Context/CartContext"
 
 const NavBar = () => {
+    const context = useContext(CartContext)
     const activeStyle = 'underline underline-offset-4'
 
     return (
         <nav className=" grid w-full bg-[#FFE600] text-[14px] pt-[10px] pr-[10%] pb-[10px] pl-[10%] ">
             <div className="nav-menu-top flex">
                 <NavLink to='/'>
-                    <img src="public\img\logo-mercadofake.png" alt="mercadofake-logo" width={180}/>
+                    <img src="\img\logo-mercadofake.png" alt="mercadofake-logo" width={180}/>
                 </NavLink>
                 <input type="text" className="w-[412px] h-[40px] p-5 " placeholder="Buscar productos, marcas y más..."></input>
             </div>
@@ -112,7 +115,7 @@ const NavBar = () => {
                     </li>
                     <li>
                         <NavLink to='/my-cart'>
-                            🛒0
+                            🛒{context.count}
                         </NavLink>                        
                     </li>
                 </ul>

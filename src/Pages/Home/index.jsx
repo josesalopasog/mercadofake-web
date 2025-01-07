@@ -5,9 +5,13 @@ function Home() {
   const [items, setItems] = useState(null)
 
   useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products')
+    fetch("https://api.escuelajs.co/api/v1/products")
       .then(response => response.json())
-      .then(data => setItems(data))
+      .then(data => {
+        setItems(data);
+        // console.log(data);
+      })
+      .catch(error => console.error('Error al cargar los datos:', error));
   }, [])
 
   return (
