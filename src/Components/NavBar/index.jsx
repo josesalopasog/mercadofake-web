@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
+import { MapPinIcon, ShoppingCartIcon } from "@heroicons/react/24/outline"
 import CartContext from "../../Context/CartContext"
 
 const NavBar = () => {
@@ -7,119 +8,131 @@ const NavBar = () => {
     const activeStyle = 'underline underline-offset-4'
 
     return (
-        <nav className=" grid w-full bg-[#FFE600] text-[14px] pt-[10px] pr-[10%] pb-[10px] pl-[10%] ">
-            <div className="nav-menu-top flex">
-                <NavLink to='/'>
-                    <img src="\img\logo-mercadofake.png" alt="mercadofake-logo" width={180}/>
-                </NavLink>
-                <input type="text" className="w-[412px] h-[40px] p-5 " placeholder="Buscar productos, marcas y más..."></input>
-            </div>
-
-            <div className="nav-menu-bottom flex justify-between items-center">
-                <div className="flex w-[80px] ">
+        <nav className=" grid w-[full] bg-[#FFE600] text-[14px] pt-[10px] pb-[10px] ">
+            <div className="max-w-[100%] min-w-[80%] justify-self-center ">
+                <div className="nav-menu-top flex mr-1">
                     <NavLink to='/'>
-                        <span className="text-[12px] text-gray-500 ">Ingresa tu </span>
-                        <span>Ubicación</span> 
+                        <img src="\img\logo-mercadofake.png" alt="mercadofake-logo" width="180px"/>
                     </NavLink>
+                    <input type="text" className="w-[550px] h-[40px] p-5 " placeholder="Buscar productos, marcas y más..."></input>
                 </div>
-                
-                <ul className="flex items-center gap-4 ">
-                    <li className="nav-menu-time">
-                        <NavLink 
-                            to='/'
-                            className={({ isActive }) =>
-                                isActive ? activeStyle: undefined
-                        }>
-                            Categorías
-                        </NavLink>
-                    </li>
-                    <li className="nav-menu-time">
-                        <NavLink 
-                            to='/ofertas'
-                            className={({ isActive }) =>
-                                isActive ? activeStyle: undefined
-                        }>
-                            Ofertas
-                        </NavLink>
-                    </li>
-                    <li className="nav-menu-time">
-                        <NavLink 
-                            to='/cupones'
-                            className={({ isActive }) =>
-                                isActive ? activeStyle: undefined
-                        }>
-                            Cupones
-                        </NavLink>
-                    </li>
-                    <li className="nav-menu-time">
-                        <NavLink 
-                            to='/supermercado'
-                            className={({ isActive }) =>
-                                isActive ? activeStyle: undefined
-                        }>
-                            Supermercado
-                        </NavLink>
-                    </li>
-                    <li className="nav-menu-time">
-                        <NavLink 
-                            to='/ropa'
-                            className={({ isActive }) =>
-                                isActive ? activeStyle: undefined
-                        }>
-                            Moda
-                        </NavLink>
-                    </li>
-                    <li className="nav-menu-time">
-                        <NavLink 
-                            to='/'
-                            className={({ isActive }) =>
-                                isActive ? activeStyle: undefined
-                        }>
-                            Mercado Play
-                        </NavLink>
-                    </li>
-                    <li className="nav-menu-time">
-                        <NavLink 
-                            to='/publicar'
-                            className={({ isActive }) =>
-                                isActive ? activeStyle: undefined
-                        }>
-                            Vender
-                        </NavLink>
-                    </li>
-                    <li className="nav-menu-time">
-                        <NavLink 
-                            to='/ayuda'
-                            className={({ isActive }) =>
-                                isActive ? activeStyle: undefined
-                        }>
-                            Ayuda
-                        </NavLink>
-                    </li>
-                </ul>
-                <ul className="flex items-center gap-2">
-                    <li>
+
+                <div className="nav-menu-bottom flex justify-between items-center" >
+                    <div className="flex w-[80px] ">
                         <NavLink to='/'>
-                            Crea tu cuenta
+                            <div className="flex">
+                                <MapPinIcon className="size-12 text-black/60 mr-1" strokeWidth={"0.8px"}></MapPinIcon>
+                                <div>
+                                    <span className="text-[12px] text-black/50 ">Ingresa tu </span>
+                                    <span>Ubicación</span> 
+                                </div>   
+                            </div>     
                         </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/sign-in'>
-                            Ingresa
-                        </NavLink>                        
-                    </li>
-                    <li>
-                        <NavLink to='/my-purchases'>
-                            Mis Compras
-                        </NavLink>                        
-                    </li>
-                    <li>
-                        <NavLink to='/my-cart'>
-                            🛒{context.count}
-                        </NavLink>                        
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                    
+                    <ul className="flex items-center gap-4 ">
+                        <li className="nav-menu-time">
+                            <NavLink 
+                                to='/'
+                                className={({ isActive }) =>
+                                    isActive ? activeStyle: undefined
+                            }>
+                                Categorías
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-time">
+                            <NavLink 
+                                to='/ofertas'
+                                className={({ isActive }) =>
+                                    isActive ? activeStyle: undefined
+                            }>
+                                Ofertas
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-time">
+                            <NavLink 
+                                to='/cupones'
+                                className={({ isActive }) =>
+                                    isActive ? activeStyle: undefined
+                            }>
+                                Cupones
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-time">
+                            <NavLink 
+                                to='/supermercado'
+                                className={({ isActive }) =>
+                                    isActive ? activeStyle: undefined
+                            }>
+                                Supermercado
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-time">
+                            <NavLink 
+                                to='/ropa'
+                                className={({ isActive }) =>
+                                    isActive ? activeStyle: undefined
+                            }>
+                                Moda
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-time">
+                            <NavLink 
+                                to='/'
+                                className={({ isActive }) =>
+                                    isActive ? activeStyle: undefined
+                            }>
+                                Mercado Play
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-time">
+                            <NavLink 
+                                to='/publicar'
+                                className={({ isActive }) =>
+                                    isActive ? activeStyle: undefined
+                            }>
+                                Vender
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-time">
+                            <NavLink 
+                                to='/ayuda'
+                                className={({ isActive }) =>
+                                    isActive ? activeStyle: undefined
+                            }>
+                                Ayuda
+                            </NavLink>
+                        </li>
+                    </ul>
+                    <ul className="flex items-center gap-2">
+                        <li>
+                            <NavLink to='/'>
+                                Crea tu cuenta
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/sign-in'>
+                                Ingresa
+                            </NavLink>                        
+                        </li>
+                        <li>
+                            <NavLink to='/my-purchases'>
+                                Mis Compras
+                            </NavLink>                        
+                        </li>
+                        <li>
+                            <NavLink to='/my-cart'>
+                                <div className="flex absolute top-[65px]">
+                                    <ShoppingCartIcon className="size-7 text-black" strokeWidth={"0.9px"} />
+                                    <div className="w-[13px] h-[15px] absolute right-[6px] bottom-[15px] rounded-full z-1 bg-[#FFE600] text-[12px] text-center ">
+                                        {context.count}
+                                    </div>    
+                                </div>    
+                            </NavLink>                        
+                        </li>
+                    </ul>
+                </div>
+            </div>    
         </nav >
     )
 }
