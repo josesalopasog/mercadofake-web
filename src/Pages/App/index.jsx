@@ -9,6 +9,7 @@ import NotFound from '../NotFound'
 import SignIn from '../SignIn'
 import NavBar  from '../../Components/NavBar'
 import Layout from '../../Components/Layout'
+import CartSideMenu from '../../Components/CartSideMenu'
 
 import './App.css'
 
@@ -30,6 +31,7 @@ function App() {
     <CartProvider>
       <BrowserRouter>
         <NavBar />
+        <CartSideMenu />
         <Layout>
           <AppRoutes/>
         </Layout>

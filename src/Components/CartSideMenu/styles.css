@@ -1,0 +1,6 @@
+.side-menu{
+    width: 350px;
+    height: calc(100vh - 115px);
+    top: 115px;
+    z-index:1
+}

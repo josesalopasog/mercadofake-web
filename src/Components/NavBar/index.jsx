@@ -12,7 +12,7 @@ const NavBar = () => {
             <div className="max-w-[100%] min-w-[80%] justify-self-center ">
                 <div className="nav-menu-top flex mr-1">
                     <NavLink to='/'>
-                        <img src="\img\logo-mercadofake.png" alt="mercadofake-logo" width="180px"/>
+                        <img src="\img\logo-mercadofake.png" alt="mercadofake-logo" width="180px" />
                     </NavLink>
                     <input type="text" className="w-[550px] h-[40px] p-5 " placeholder="Buscar productos, marcas y más..."></input>
                 </div>
@@ -24,82 +24,82 @@ const NavBar = () => {
                                 <MapPinIcon className="size-12 text-black/60 mr-1" strokeWidth={"0.8px"}></MapPinIcon>
                                 <div>
                                     <span className="text-[12px] text-black/50 ">Ingresa tu </span>
-                                    <span>Ubicación</span> 
-                                </div>   
-                            </div>     
+                                    <span>Ubicación</span>
+                                </div>
+                            </div>
                         </NavLink>
                     </div>
-                    
+
                     <ul className="flex items-center gap-4 ">
                         <li className="nav-menu-time">
-                            <NavLink 
+                            <NavLink
                                 to='/'
                                 className={({ isActive }) =>
-                                    isActive ? activeStyle: undefined
-                            }>
+                                    isActive ? activeStyle : undefined
+                                }>
                                 Categorías
                             </NavLink>
                         </li>
                         <li className="nav-menu-time">
-                            <NavLink 
+                            <NavLink
                                 to='/ofertas'
                                 className={({ isActive }) =>
-                                    isActive ? activeStyle: undefined
-                            }>
+                                    isActive ? activeStyle : undefined
+                                }>
                                 Ofertas
                             </NavLink>
                         </li>
                         <li className="nav-menu-time">
-                            <NavLink 
+                            <NavLink
                                 to='/cupones'
                                 className={({ isActive }) =>
-                                    isActive ? activeStyle: undefined
-                            }>
+                                    isActive ? activeStyle : undefined
+                                }>
                                 Cupones
                             </NavLink>
                         </li>
                         <li className="nav-menu-time">
-                            <NavLink 
+                            <NavLink
                                 to='/supermercado'
                                 className={({ isActive }) =>
-                                    isActive ? activeStyle: undefined
-                            }>
+                                    isActive ? activeStyle : undefined
+                                }>
                                 Supermercado
                             </NavLink>
                         </li>
                         <li className="nav-menu-time">
-                            <NavLink 
+                            <NavLink
                                 to='/ropa'
                                 className={({ isActive }) =>
-                                    isActive ? activeStyle: undefined
-                            }>
+                                    isActive ? activeStyle : undefined
+                                }>
                                 Moda
                             </NavLink>
                         </li>
                         <li className="nav-menu-time">
-                            <NavLink 
+                            <NavLink
                                 to='/'
                                 className={({ isActive }) =>
-                                    isActive ? activeStyle: undefined
-                            }>
+                                    isActive ? activeStyle : undefined
+                                }>
                                 Mercado Play
                             </NavLink>
                         </li>
                         <li className="nav-menu-time">
-                            <NavLink 
+                            <NavLink
                                 to='/publicar'
                                 className={({ isActive }) =>
-                                    isActive ? activeStyle: undefined
-                            }>
+                                    isActive ? activeStyle : undefined
+                                }>
                                 Vender
                             </NavLink>
                         </li>
                         <li className="nav-menu-time">
-                            <NavLink 
+                            <NavLink
                                 to='/ayuda'
                                 className={({ isActive }) =>
-                                    isActive ? activeStyle: undefined
-                            }>
+                                    isActive ? activeStyle : undefined
+                                }>
                                 Ayuda
                             </NavLink>
                         </li>
@@ -113,26 +113,28 @@ const NavBar = () => {
                         <li>
                             <NavLink to='/sign-in'>
                                 Ingresa
-                            </NavLink>                        
+                            </NavLink>
                         </li>
                         <li>
                             <NavLink to='/my-purchases'>
                                 Mis Compras
-                            </NavLink>                        
+                            </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/my-cart'>
-                                <div className="flex absolute top-[65px]">
-                                    <ShoppingCartIcon className="size-7 text-black" strokeWidth={"0.9px"} />
-                                    <div className="w-[13px] h-[15px] absolute right-[6px] bottom-[15px] rounded-full z-1 bg-[#FFE600] text-[12px] text-center ">
-                                        {context.count}
-                                    </div>    
-                                </div>    
-                            </NavLink>                        
+                            <div className="flex absolute top-[65px]">
+                                <ShoppingCartIcon
+                                    className="size-7 text-black cursor-pointer"
+                                    strokeWidth={"0.9px"}
+                                    onClick={() => context.openCartSideMenu()}
+                                />
+                                <div className="w-[13px] h-[15px] absolute right-[6px] bottom-[15px] rounded-full z-1 bg-[#FFE600] text-[12px] text-center ">
+                                    {context.count}
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
-            </div>    
+            </div>
         </nav >
     )
 }

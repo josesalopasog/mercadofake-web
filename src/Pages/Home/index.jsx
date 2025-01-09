@@ -4,17 +4,23 @@ import ProductDetail from "../../Components/ProductDetail"
 
 
 function Home() {
-  const [items, setItems] = useState(null)
+  const [items, setItems] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products")
-      .then(response => response.json())
-      .then(data => {
-        setItems(data);
-        // console.log(data);
+    // fetch("https://api.escuelajs.co/api/v1/products")
+    fetch("src/Products/products.json")
+      .then((response) => {
+        if(!response.ok){
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json()
       })
-      .catch(error => console.error('Error al cargar los datos:', error));
-  }, [])
+      .then((data) => {
+        setItems(data);
+        console.log('Datos recibidos: ', data);
+      })
+      .catch((error) => console.error('Error al cargar los datos:', error));
+  }, []);
 
   return (
     <div>

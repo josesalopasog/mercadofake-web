@@ -12,8 +12,16 @@ export const CartProvider = ( { children }) => {
     const openProductDetail = () => setIsProductDetailOpen(true);
     const closeProductDetail = () => setIsProductDetailOpen(false);
 
+    //Cart Side Menu · Open/Close
+    const [isCartSideMenuOpen, setIsCartSideMenu] = useState(false);
+    const openCartSideMenu = () => setIsCartSideMenu(true);
+    const closeCartSideMenu = () => setIsCartSideMenu(false);
+
     //Product Detail · Show Product
     const [productToShow, setProductToShow] = useState({});
+    
+    //Shopping Cart · Add products to cart
+    const [cartProducts, setCartProducts] = useState([]);
 
     CartProvider.propTypes = {
         children: PropTypes.node.isRequired,
@@ -27,7 +35,12 @@ export const CartProvider = ( { children }) => {
             closeProductDetail,
             isProductDetailOpen,
             productToShow,
-            setProductToShow
+            setProductToShow,
+            cartProducts,
+            setCartProducts,
+            isCartSideMenuOpen,
+            openCartSideMenu,
+            closeCartSideMenu
         }}>
             {children}
         </CartContext.Provider>

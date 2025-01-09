@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { ShoppingCartIcon } from "@heroicons/react/24/outline"
+import { ShoppingCartIcon, CheckCircleIcon } from "@heroicons/react/24/outline"
 import CartContext from "../../Context/CartContext"
 
 const Card = (data) => {
@@ -7,7 +7,45 @@ const Card = (data) => {
 
     const showProduct = (productDetail) =>{
         context.openProductDetail();
-        context.setProductToShow(productDetail)
+        context.setProductToShow(productDetail);
+    }
+
+    const addProductsToCart = (event, productData) =>{
+        event.stopPropagation();
+        context.closeProductDetail();
+        context.setCount(context.count +1);
+        context.setCartProducts([...context.cartProducts, productData]);
+        context.openCartSideMenu();
+        console.log('CART: ', context.cartProducts);
+    }
+
+    const shoppingButton = (id) => {
+        const isInCart = context.cartProducts.filter(product => product.id === id).length > 0
+
+        if (isInCart) {
+            return(
+                <button 
+                    className="bg-green-500 text-white font-bold w-[100%] h-[35px] rounded-lg mt-2 mb-2 flex justify-center p-1"
+                > 
+                    <span className="mr-2">Agregado </span>
+                    <span>
+                        <CheckCircleIcon className="size-7 text-white" strokeWidth={"2px"} />
+                    </span>
+                </button>
+            )
+        }else{
+            return(
+                <button 
+                    className="bg-blue-500 text-white font-bold w-[100%] h-[35px] rounded-lg mt-2 mb-2 flex justify-center p-1"
+                    onClick={(event) => addProductsToCart(event, data.data)}
+                > 
+                    <span className="mr-2">Agregar </span>
+                    <span>
+                        <ShoppingCartIcon className="size-7 text-white" strokeWidth={"2px"} />
+                    </span>
+                </button>
+            )            
+        }
     }
 
     return(
@@ -23,15 +61,7 @@ const Card = (data) => {
                 <p className="text-sm font-light h-[45px] ">{data.data.title}</p>
                 <p className="text-[20px] font-medium">${data.data.price}.000 COP</p>
             </div>
-            <button 
-                className="bg-blue-500 text-white font-bold w-[100%] h-[35px] rounded-lg mt-2 mb-2 flex justify-center p-1"
-                onClick={() => context.setCount(context.count +1)}
-            > 
-                <span className="mr-2">Agregar </span>
-                <span>
-                    <ShoppingCartIcon className="size-7 text-white" strokeWidth={"2px"} />
-                </span>
-            </button>
+            {shoppingButton(data.data.id)}
             <p className="mt-2 mb-2 text-green-600 text-[14px] font-bold">Envío gratis</p>
         </div>
     )

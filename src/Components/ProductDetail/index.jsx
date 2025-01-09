@@ -20,7 +20,7 @@ const ProductDetail = () => {
                 </div>
             </div>
             <figure>
-                <img className="w-[300PX] h-full p-7" src={context.productToShow.images[0]} alt={context.productToShow.title} />
+                <img className="w-[300PX] h-full p-7" src={context.productToShow.images} alt={context.productToShow.title} />
             </figure>
             <p className='flex flex-col'>
                 <span className='font-bold text-[20px] '>${context.productToShow.price}.000 COP</span>
