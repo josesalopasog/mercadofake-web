@@ -3,6 +3,7 @@ import { CartProvider } from '../../Context/CartProvider'
 
 import Home from '../Home'
 import MyPurchases from '../MyPurchases'
+import MyOrder from '../MyOrder'
 import MyProfile from '../MyProfile'
 import MyCart from '../MyCart'
 import NotFound from '../NotFound'
@@ -17,6 +18,7 @@ const AppRoutes = () => {
   let  routes = useRoutes([
     {path: '/', element: <Home />},
     {path: '/my-purchases', element: <MyPurchases />},
+    {path: '/my-purchases/last', element: <MyOrder />},
     {path: '/my-profile', element: <MyProfile />},
     {path: '/my-cart', element: <MyCart />},
     {path: '/not-found', element: <NotFound />},

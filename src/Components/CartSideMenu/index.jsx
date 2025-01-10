@@ -1,6 +1,7 @@
 import './styles.css'
 import { XMarkIcon } from "@heroicons/react/24/outline"
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import CartContext from '../../Context/CartContext'
 import OrderCard from '../OrderCard'
 import { totalPrice } from '../../Utils/totalPrice'
@@ -25,6 +26,8 @@ const CartSideMenu = () => {
         context.setOrder([...context.order, orderToAdd]);
         context.setCartProducts([]);
         context.setCount(0);
+        context.closeCartSideMenu();
+        console.log(context.order);
     }
 
     const checkoutShoppingButton = () => {
@@ -41,12 +44,14 @@ const CartSideMenu = () => {
             )
         }else{
             return(
-                <button 
-                    className="bg-blue-500 text-white font-bold w-[100%] h-[35px] rounded-lg mt-10 mb-2 flex justify-center p-1"
-                    onClick={()=>handleCheckout()}
-                > 
-                    <span className="mr-2">Finalizar Compra </span>
-                </button>
+                <Link to="/my-purchases/last">
+                    <button 
+                        className="bg-blue-500 text-white font-bold w-[100%] h-[35px] rounded-lg mt-10 mb-2 flex justify-center p-1"
+                        onClick={()=>handleCheckout()}
+                    > 
+                        <span className="mr-2">Finalizar Compra </span>
+                    </button>
+                </Link>
             )            
         }
     }

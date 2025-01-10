@@ -8,7 +8,7 @@ function Home() {
 
   useEffect(() => {
     // fetch("https://api.escuelajs.co/api/v1/products")
-    fetch("src/Products/products.json")
+    fetch("public/Products/products.json")
       .then((response) => {
         if(!response.ok){
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -17,14 +17,14 @@ function Home() {
       })
       .then((data) => {
         setItems(data);
-        console.log('Datos recibidos: ', data);
+        // console.log('Datos recibidos: ', data);
       })
       .catch((error) => console.error('Error al cargar los datos:', error));
   }, []);
 
   return (
-    <div>
-      <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
+    <div className="flex flex-col items-center mt-10">
+      <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg justify-center">
         {
           items?.map(item => (
             <Card 
