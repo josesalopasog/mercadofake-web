@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { ShoppingCartIcon, CheckCircleIcon } from "@heroicons/react/24/outline"
 import CartContext from "../../Context/CartContext"
+import { usdToCop } from "../../Utils/usdToCop"
 
 const Card = (data) => {
     const context = useContext( CartContext)
@@ -19,7 +20,7 @@ const Card = (data) => {
         console.log('CART: ', context.cartProducts);
     }
 
-    const shoppingButton = (id) => {
+    const addProductButton = (id) => {
         const isInCart = context.cartProducts.filter(product => product.id === id).length > 0
 
         if (isInCart) {
@@ -50,18 +51,18 @@ const Card = (data) => {
 
     return(
         <div 
-            className="bg-white cursor-pointer w-56 h-90 rounded-lg flex flex-col"
+            className="bg-white cursor-pointer w-56 h-56 rounded-lg flex flex-col"
             onClick={() => showProduct(data.data)}
         >
             <figure className="relative mb-2 w-full h-4/5">
                 <span className="absolute bottom-0 left-0 rounded-lg bg-slate-600/30 text-white text-sm m-2 px-3 py-0.3">{data.data.category.name}</span>
-                <img className="w-full h-full object-cover" src={data.data.images[0]} alt={data.data.title} />
+                <img className="w-full h-full object-scale-down rounded-lg" src={data.data.images[0]} alt={data.data.title} />
             </figure>
             <div>
                 <p className="text-sm font-light h-[45px] ">{data.data.title}</p>
-                <p className="text-[20px] font-medium">${data.data.price}.000 COP</p>
+                <p className="text-[20px] font-medium">{usdToCop(data.data.price)}</p>
             </div>
-            {shoppingButton(data.data.id)}
+            {addProductButton(data.data.id)}
             <p className="mt-2 mb-2 text-green-600 text-[14px] font-bold">Envío gratis</p>
         </div>
     )

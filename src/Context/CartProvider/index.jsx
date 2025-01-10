@@ -23,6 +23,9 @@ export const CartProvider = ( { children }) => {
     //Shopping Cart · Add products to cart
     const [cartProducts, setCartProducts] = useState([]);
 
+    //Shopping Cart · Order
+    const [order, setOrder] = useState([]);
+
     CartProvider.propTypes = {
         children: PropTypes.node.isRequired,
     }
@@ -40,7 +43,9 @@ export const CartProvider = ( { children }) => {
             setCartProducts,
             isCartSideMenuOpen,
             openCartSideMenu,
-            closeCartSideMenu
+            closeCartSideMenu,
+            order,
+            setOrder
         }}>
             {children}
         </CartContext.Provider>
