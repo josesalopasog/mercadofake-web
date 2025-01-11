@@ -8,7 +8,7 @@ function Home() {
 
   useEffect(() => {
     // fetch("https://api.escuelajs.co/api/v1/products")
-    fetch("public/Products/products.json")
+    fetch("src/Products/products.json")
       .then((response) => {
         if(!response.ok){
           throw new Error(`HTTP error! Status: ${response.status}`);
