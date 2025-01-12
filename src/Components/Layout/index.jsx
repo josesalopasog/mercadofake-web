@@ -1,16 +1,24 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 const Layout = ({ children }) => {
+  Layout.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
 
-    Layout.propTypes = {
-        children: PropTypes.node.isRequired,
-    }
+  return (
+    <div className="flex flex-col items-center bg-[#EDEDED] h-[100vh]">
+      {/* Contenido principal */}
+      <main className="flex flex-col w-[100%] h-[100vh] items-center ">
+        {children}
+      </main>
 
-    return(
-        <div className='flex flex-col items-center'>
-            { children } 
-        </div>
-    )
-}
+      {/* Footer */}
+      <footer className="flex flex-col bg-white text-black/50 py-4 text-center w-[100%] ">
+        <p>© 2025 Bogotá, Colombia.</p>
+        <p>Made by José Salopaso</p>
+      </footer>
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

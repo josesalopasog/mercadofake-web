@@ -7,7 +7,7 @@ const OrderCard = ({ id, title, imageURL, price, handleDelete }) => {
     OrderCard.propTypes = {
         id: PropTypes.any.isRequired,
         title: PropTypes.string.isRequired,
-        imageURL: PropTypes.string.isRequired,
+        imageURL: PropTypes.any.isRequired,
         price: PropTypes.number.isRequired,
         handleDelete: PropTypes.func.isRequired
     }

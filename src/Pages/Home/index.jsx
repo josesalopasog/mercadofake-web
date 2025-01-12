@@ -23,8 +23,8 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center mt-10">
-      <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg justify-center">
+    <div className="flex flex-col mt-10 h-[100vh] w-[100%] items-center">
+      <div className="flex flex-wrap w-[90%] ">
         {
           items?.map(item => (
             <Card 

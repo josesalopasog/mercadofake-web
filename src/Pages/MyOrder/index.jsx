@@ -7,9 +7,12 @@ import { usdToCop } from "../../Utils/usdToCop";
 
 function MyOrder() {
   const context = useContext(CartContext);
+  const currentPath = window.location.pathname;
+  let index = currentPath.substring(currentPath.lastIndexOf('/') + 1)
+  if (index === 'last') index = context.order?.length - 1
 
   return (
-    <div className="flex flex-col w-[80%] h-[100vh] bg-[#EDEDED]  px-5 py-10">
+    <div className="flex flex-col w-[60%] h-[100vh] bg-[#EDEDED]  px-5 py-10">
       <div className="path text-left">
         <Link to="/my-purchases">
           <span className="hover:text-blue-500">Compras</span>
@@ -25,7 +28,7 @@ function MyOrder() {
         </p>
         <hr className="my-2" />
         <div>
-          {context.order?.length > 0 && context.order.slice(-1)[0]?.products?.length > 0 ? (context.order.slice(-1)[0].products.map((product) => (
+          {context.order?.length > 0 && context.order?.[index]?.products?.length > 0 ? (context.order?.[index].products.map((product) => (
                 <MyOrderCard
                   key={product.id}
                   title={product.title}

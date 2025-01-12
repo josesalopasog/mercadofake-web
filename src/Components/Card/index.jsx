@@ -51,13 +51,14 @@ const Card = (data) => {
 
     return(
         <div 
-            className="bg-white cursor-pointer w-56 h-56 rounded-lg flex flex-col"
+            className="bg-white cursor-pointer w-[240px] h-[360px] p-5 rounded-lg flex flex-col m-2"
             onClick={() => showProduct(data.data)}
         >
-            <figure className="relative mb-2 w-full h-4/5">
-                <span className="absolute bottom-0 left-0 rounded-lg bg-slate-600/30 text-white text-sm m-2 px-3 py-0.3">{data.data.category.name}</span>
+            <figure className="relative w-[100%] h-[160px] mb-3">
+                <span className="absolute bottom-0 left-0 rounded-lg bg-slate-600/30 text-white text-sm m-2 px-3 py-0.3">{data.data.category}</span>
                 <img className="w-full h-full object-scale-down rounded-lg" src={data.data.images[0]} alt={data.data.title} />
             </figure>
+
             <div>
                 <p className="text-sm font-light h-[45px] ">{data.data.title}</p>
                 <p className="text-[20px] font-medium">{usdToCop(data.data.price)}</p>

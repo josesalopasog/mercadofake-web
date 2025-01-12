@@ -1,7 +1,9 @@
 import './styles.css'
 import { XMarkIcon, ShoppingCartIcon } from "@heroicons/react/24/outline"
 import { useContext } from 'react'
+import { usdToCop } from '../../Utils/usdToCop'
 import CartContext from '../../Context/CartContext'
+
 
 const ProductDetail = () => {
     const context = useContext(CartContext);
@@ -23,7 +25,7 @@ const ProductDetail = () => {
                 <img className="w-[300PX] h-full p-7" src={context.productToShow.images} alt={context.productToShow.title} />
             </figure>
             <p className='flex flex-col'>
-                <span className='font-bold text-[20px] '>${context.productToShow.price}.000 COP</span>
+                <span className='font-bold text-[20px] '>{usdToCop(context.productToShow.price)}</span>
                 <span className='py-8'>{context.productToShow.description}</span>
             </p>
             <button 

@@ -8,7 +8,7 @@ const NavBar = () => {
     const activeStyle = 'underline underline-offset-4'
 
     return (
-        <nav className=" grid w-[full] bg-[#FFE600] text-[14px] pt-[10px] pb-[10px] ">
+        <nav className=" grid w-[full] bg-[#FFE600] text-[14px] py-[10px]">
             <div className="max-w-[100%] min-w-[80%] justify-self-center ">
                 <div className="nav-menu-top flex mr-1">
                     <NavLink to='/'>
