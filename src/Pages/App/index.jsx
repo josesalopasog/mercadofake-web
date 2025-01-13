@@ -11,8 +11,10 @@ import SignIn from '../SignIn'
 import NavBar  from '../../Components/NavBar'
 import Layout from '../../Components/Layout'
 import CartSideMenu from '../../Components/CartSideMenu'
+import SearchList from '../SearchList'
 
 import './App.css'
+
 
 const AppRoutes = () => {
   let  routes = useRoutes([
@@ -24,6 +26,7 @@ const AppRoutes = () => {
     {path: '/my-cart', element: <MyCart />},
     {path: '/not-found', element: <NotFound />},
     {path: '/sign-in', element: <SignIn />},
+    {path: '/search-list', element: <SearchList/>}
   ]);  
 
   return routes

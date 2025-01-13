@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import CartContext from "../CartContext";
-
+import { useEffect } from "react";
 
 export const CartProvider = ( { children }) => {
     //Shopping Cart · Count
@@ -26,9 +26,42 @@ export const CartProvider = ( { children }) => {
     //Shopping Cart · Order
     const [order, setOrder] = useState([]);
 
+    // Get Products
+    const [items, setItems] = useState(null);
+    const [filteredItems, setFilteredItems] = useState(null);
+    
+    // Get Products by title
+    const [searchByTitle, setSearchByTitle] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
+
+
     CartProvider.propTypes = {
         children: PropTypes.node.isRequired,
     }
+
+    useEffect(() => {
+        // fetch("https://api.escuelajs.co/api/v1/products")
+        fetch("src/Products/products.json")
+          .then((response) => {
+            if(!response.ok){
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json()
+          })
+          .then((data) => {
+            setItems(data);
+            // console.log('Datos recibidos: ', data);
+          })
+          .catch((error) => console.error('Error al cargar los datos:', error));
+      }, []);
+
+      const filteredItemsByTitle = (items, searchByTitle) =>{
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
+      }
+
+      useEffect(() => {
+        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
+      }, [items,searchByTitle])
 
     return (
         <CartContext.Provider value={{
@@ -45,7 +78,14 @@ export const CartProvider = ( { children }) => {
             openCartSideMenu,
             closeCartSideMenu,
             order,
-            setOrder
+            setOrder,
+            items,
+            setItems,
+            searchByTitle,
+            setSearchByTitle,
+            filteredItems,
+            searchQuery,
+            setSearchQuery
         }}>
             {children}
         </CartContext.Provider>
