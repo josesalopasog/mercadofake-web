@@ -55,7 +55,7 @@ const Card = (data) => {
             onClick={() => showProduct(data.data)}
         >
             <figure className="relative w-[100%] h-[160px] mb-3">
-                <span className="absolute bottom-0 left-0 rounded-lg bg-slate-600/30 text-white text-sm m-2 px-3 py-0.3">{data.data.category.name}</span>
+                <span className="absolute bottom-0 left-0 rounded-lg bg-slate-600/30 text-white text-sm m-2 px-3 py-0.3">{data.data.category}</span>
                 <img className="w-full h-full object-scale-down rounded-lg" src={data.data.images[0]} alt={data.data.title} />
             </figure>
 

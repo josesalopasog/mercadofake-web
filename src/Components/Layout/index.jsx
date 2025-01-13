@@ -6,9 +6,9 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#EDEDED] h-[100vh]">
+    <div className="flex flex-col items-center bg-[#EDEDED]  h-[100vh]">
       {/* Contenido principal */}
-      <main className="flex flex-col w-[100%] h-[100vh] items-center ">
+      <main className="flex flex-col h-[100%] w-[100%] items-center">
         {children}
       </main>
 

@@ -29,10 +29,14 @@ export const CartProvider = ( { children }) => {
     // Get Products
     const [items, setItems] = useState(null);
     const [filteredItems, setFilteredItems] = useState(null);
-    
+    const [filteredItemsByCat, setFilteredItemsByCat] = useState(null);
+
     // Get Products by title
     const [searchByTitle, setSearchByTitle] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
+
+    // Get Products by category
+    const [searchByCategory, setSearchByCategory] = useState(null);
 
 
     CartProvider.propTypes = {
@@ -59,9 +63,14 @@ export const CartProvider = ( { children }) => {
         return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
       }
 
+      const filteredItemsByCategory = (items, searchByCategory) =>{
+        return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLowerCase()))
+      }
+
       useEffect(() => {
         if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
-      }, [items,searchByTitle])
+        if (searchByCategory) setFilteredItemsByCat(filteredItemsByCategory(items, searchByCategory))
+        }, [items,searchByTitle, searchByCategory])
 
     return (
         <CartContext.Provider value={{
@@ -84,8 +93,11 @@ export const CartProvider = ( { children }) => {
             searchByTitle,
             setSearchByTitle,
             filteredItems,
+            filteredItemsByCat,
             searchQuery,
-            setSearchQuery
+            setSearchQuery,
+            searchByCategory, 
+            setSearchByCategory
         }}>
             {children}
         </CartContext.Provider>

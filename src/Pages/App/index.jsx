@@ -12,6 +12,7 @@ import NavBar  from '../../Components/NavBar'
 import Layout from '../../Components/Layout'
 import CartSideMenu from '../../Components/CartSideMenu'
 import SearchList from '../SearchList'
+import Clothes from '../Clothes'
 
 import './App.css'
 
@@ -19,6 +20,7 @@ import './App.css'
 const AppRoutes = () => {
   let  routes = useRoutes([
     {path: '/', element: <Home />},
+    {path: '/moda', element: <Clothes />},
     {path: '/my-purchases', element: <MyPurchases />},
     {path: '/my-purchases/last', element: <MyOrder />},
     {path: '/my-purchases/:id', element: <MyOrder />},

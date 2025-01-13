@@ -3,14 +3,16 @@ import ProductDetail from "../../Components/ProductDetail"
 import { useContext } from "react"
 import CartContext from "../../Context/CartContext"
 
-function Home() {
+function Clothes() {
   const context =useContext(CartContext)
+
+  console.log(context.filteredItemsByCat)
 
   return (
     <div className="flex flex-col h-[100%] w-[100%] items-center">
       <div className="flex flex-wrap justify-center mt-10">
         {
-          context.items?.map(item => (
+          context.filteredItemsByCat?.map(item => (
             <Card 
               key={item.id} 
               data={item}  
@@ -23,4 +25,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Clothes
