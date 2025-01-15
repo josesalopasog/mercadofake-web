@@ -12,15 +12,21 @@ import NavBar  from '../../Components/NavBar'
 import Layout from '../../Components/Layout'
 import CartSideMenu from '../../Components/CartSideMenu'
 import SearchList from '../SearchList'
-import Clothes from '../Clothes'
+import CategoriesMenu from '../../Components/CategoriesMenu'
+import Clothes from '../Categories/Clothes'
+import Technology from '../Categories/Technology'
+import Games from '../Categories/Games'
+import Tools from '../Categories/Tools'
 
 import './App.css'
-
 
 const AppRoutes = () => {
   let  routes = useRoutes([
     {path: '/', element: <Home />},
     {path: '/moda', element: <Clothes />},
+    {path: '/tecnologia', element: <Technology />},
+    {path: '/herramientas', element: <Tools/>},
+    {path: '/juegos-y-juguetes', element: <Games />},
     {path: '/my-purchases', element: <MyPurchases />},
     {path: '/my-purchases/last', element: <MyOrder />},
     {path: '/my-purchases/:id', element: <MyOrder />},
@@ -40,6 +46,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <CartSideMenu />
+        <CategoriesMenu />
         <Layout>
           <AppRoutes/>
         </Layout>

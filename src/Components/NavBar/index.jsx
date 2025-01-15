@@ -4,12 +4,12 @@ import {
     MapPinIcon,
     ShoppingCartIcon,
     MagnifyingGlassIcon,
+    ChevronDownIcon
 } from "@heroicons/react/24/outline";
 import CartContext from "../../Context/CartContext";
 
 const NavBar = () => {
     const context = useContext(CartContext);
-    const activeStyle = "underline underline-offset-4";
     const navigate = useNavigate();
 
     const handleSearch = () => {
@@ -86,18 +86,19 @@ const NavBar = () => {
             </div>
 
             <div className="row-start-2 col-start-2 flex justify-center items-center">
-                <ul className=" flex items-center gap-4 ">
-                    <li className="nav-menu-time">
-                        <NavLink
-                            to="/"
-                        >
-                            Categorías
-                        </NavLink>
+                <ul className=" flex items-center gap-4 cursor-pointer">
+                    <li 
+                        ref={context.categoriesNavRef}
+                        className="flex flex-row nav-menu-time"
+                        onMouseEnter={() => context.openCategoriesMenu()}
+                        onClick={() => context.openCategoriesMenu()}
+                    >
+                        <span>Categorías</span> 
+                        <span><ChevronDownIcon className="size-3 ml-[4px] mt-[7px] "/></span>
                     </li>
                     <li className="nav-menu-time">
                         <NavLink
                             to="/ofertas"
-                            className={({ isActive }) => (isActive ? activeStyle : undefined)}
                         >
                             Ofertas
                         </NavLink>
@@ -105,7 +106,6 @@ const NavBar = () => {
                     <li className="nav-menu-time">
                         <NavLink
                             to="/cupones"
-                            className={({ isActive }) => (isActive ? activeStyle : undefined)}
                         >
                             Cupones
                         </NavLink>
@@ -113,7 +113,6 @@ const NavBar = () => {
                     <li className="nav-menu-time">
                         <NavLink
                             to="/supermercado"
-                            className={({ isActive }) => (isActive ? activeStyle : undefined)}
                         >
                             Supermercado
                         </NavLink>
@@ -121,7 +120,6 @@ const NavBar = () => {
                     <li className="nav-menu-time">
                         <NavLink
                             to="/moda"
-                            className={({ isActive }) => (isActive ? activeStyle : undefined)}
                             onClick={() => context.setSearchByCategory('Ropa')}
                         >
                             Moda
@@ -137,7 +135,6 @@ const NavBar = () => {
                     <li className="nav-menu-time hidden sm:block">
                         <NavLink
                             to="/publicar"
-                            className={({ isActive }) => (isActive ? activeStyle : undefined)}
                         >
                             Vender
                         </NavLink>
@@ -145,7 +142,6 @@ const NavBar = () => {
                     <li className="nav-menu-time hidden sm:block">
                         <NavLink
                             to="/ayuda"
-                            className={({ isActive }) => (isActive ? activeStyle : undefined)}
                         >
                             Ayuda
                         </NavLink>

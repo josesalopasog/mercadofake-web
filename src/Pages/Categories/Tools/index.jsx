@@ -1,12 +1,10 @@
-import Card from "../../Components/Card"
-import ProductDetail from "../../Components/ProductDetail"
+import Card from "../../../Components/Card"
+import ProductDetail from "../../../Components/ProductDetail"
 import { useContext } from "react"
-import CartContext from "../../Context/CartContext"
+import CartContext from "../../../Context/CartContext"
 
-function Clothes() {
+function Tools() {
   const context =useContext(CartContext)
-
-  console.log(context.filteredItemsByCat)
 
   return (
     <div className="flex flex-col h-[100%] w-[100%] items-center">
@@ -25,4 +23,4 @@ function Clothes() {
   )
 }
 
-export default Clothes
+export default Tools

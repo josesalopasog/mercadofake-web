@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import CartContext from "../CartContext";
-import { useEffect } from "react";
+
 
 export const CartProvider = ( { children }) => {
     //Shopping Cart · Count
@@ -16,6 +16,15 @@ export const CartProvider = ( { children }) => {
     const [isCartSideMenuOpen, setIsCartSideMenu] = useState(false);
     const openCartSideMenu = () => setIsCartSideMenu(true);
     const closeCartSideMenu = () => setIsCartSideMenu(false);
+
+    //Categories Menu · Open/Close
+    const [isCategoriesMenuOpen, setIsCategoriesMenuOpen] = useState(false);
+    const openCategoriesMenu = () => setIsCategoriesMenuOpen(true);
+    const closeCategoriesMenu = () => setIsCategoriesMenuOpen(false);
+
+    //Categories Menu · Position
+    const [position, setPosition] = useState({left: 0});
+    const categoriesNavRef = useRef(null);
 
     //Product Detail · Show Product
     const [productToShow, setProductToShow] = useState({});
@@ -72,6 +81,23 @@ export const CartProvider = ( { children }) => {
         if (searchByCategory) setFilteredItemsByCat(filteredItemsByCategory(items, searchByCategory))
         }, [items,searchByTitle, searchByCategory])
 
+      //Giving the position to de Categories Menu 
+      
+      const updatePosition = () => {
+        if (categoriesNavRef.current) {
+          const rect = categoriesNavRef.current.getBoundingClientRect();
+          setPosition({ left: rect.left - 25 });
+        }
+      };
+      
+      // Manejar el cambio de tamaño de la ventana
+      useEffect(() => {
+        updatePosition();
+        window.addEventListener('resize', updatePosition);
+        return () => window.removeEventListener('resize', updatePosition);
+      }, []);
+    
+
     return (
         <CartContext.Provider value={{
             count,
@@ -97,7 +123,14 @@ export const CartProvider = ( { children }) => {
             searchQuery,
             setSearchQuery,
             searchByCategory, 
-            setSearchByCategory
+            setSearchByCategory,
+            isCategoriesMenuOpen, 
+            setIsCategoriesMenuOpen,
+            openCategoriesMenu,
+            closeCategoriesMenu,
+            position, 
+            setPosition,
+            categoriesNavRef
         }}>
             {children}
         </CartContext.Provider>
