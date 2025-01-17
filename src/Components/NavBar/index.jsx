@@ -7,7 +7,7 @@ import {
     ChevronDownIcon
 } from "@heroicons/react/24/outline";
 import CartContext from "../../Context/CartContext";
-import logo from "../../Assets/logo-mercadofake.png"
+import logo from "../../assets/logo-mercadofake.png"
 
 const NavBar = () => {
     const context = useContext(CartContext);
