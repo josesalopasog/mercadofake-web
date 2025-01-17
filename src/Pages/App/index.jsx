@@ -27,22 +27,22 @@ import './App.css'
 
 const AppRoutes = () => {
   let  routes = useRoutes([
-    {path: '/', element: <Home />},
-    {path: '/moda', element: <Clothes />},
-    {path: '/tecnologia', element: <Technology />},
-    {path: '/herramientas', element: <Tools/>},
-    {path: '/juegos-y-juguetes', element: <Games />},
-    {path: '/my-purchases', element: <MyPurchases />},
-    {path: '/my-purchases/last', element: <MyOrder />},
-    {path: '/my-purchases/:id', element: <MyOrder />},
-    {path: '/my-profile', element: <MyProfile />},
-    {path: '/my-cart', element: <MyCart />},
-    {path: '/not-found', element: <NotFound />},
-    {path: '/nothing-to-see', element: <GoBackHome/>},
-    {path: '/sign-in', element: <SignIn />},
-    {path: '/registration', element: <CreateAccount/>},
-    {path: '/search-list', element: <SearchList/>},
-    {path: '/ayuda', element: <Help />}
+    {path: '/mercadofake-web/', element: <Home />},
+    {path: '/mercadofake-web/moda', element: <Clothes />},
+    {path: '/mercadofake-web/tecnologia', element: <Technology />},
+    {path: '/mercadofake-web/herramientas', element: <Tools/>},
+    {path: '/mercadofake-web/juegos-y-juguetes', element: <Games />},
+    {path: '/mercadofake-web/my-purchases', element: <MyPurchases />},
+    {path: '/mercadofake-web/my-purchases/last', element: <MyOrder />},
+    {path: '/mercadofake-web/my-purchases/:id', element: <MyOrder />},
+    {path: '/mercadofake-web/my-profile', element: <MyProfile />},
+    {path: '/mercadofake-web/my-cart', element: <MyCart />},
+    {path: '/mercadofake-web/not-found', element: <NotFound />},
+    {path: '/mercadofake-web/nothing-to-see', element: <GoBackHome/>},
+    {path: '/mercadofake-web/sign-in', element: <SignIn />},
+    {path: '/mercadofake-web/registration', element: <CreateAccount/>},
+    {path: '/mercadofake-web/search-list', element: <SearchList/>},
+    {path: '/mercadofake-web/ayuda', element: <Help />}
   ]);  
 
   return routes

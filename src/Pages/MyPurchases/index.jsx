@@ -10,7 +10,7 @@ function MyPurchases() {
     <div className="flex flex-col w-[60%] h-[100vh] bg-[#EDEDED]  px-5 py-10">
       <h1 className="text-[24px] font-semibold">Compras</h1>
       {context.order.map((order, index) => (
-        <Link key={index} to={`/my-purchases/${index}`} >
+        <Link key={index} to={`/mercadofake-web/my-purchases/${index}`} >
           <OrdersCard
             date={order.date}
             totalPrice={order.totalPrice}

@@ -45,7 +45,7 @@ const CartSideMenu = () => {
             )
         }else{
             return(
-                <Link to="/my-purchases/last">
+                <Link to="/mercadofake-web/my-purchases/last">
                     <button 
                         className="bg-blue-500 text-white font-bold w-[100%] h-[35px] rounded-lg mt-10 mb-2 flex justify-center p-1"
                         onClick={()=>handleCheckout()}

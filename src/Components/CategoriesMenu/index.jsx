@@ -20,7 +20,7 @@ const CategoriesMenu = () => {
                 <div className="dropdown-triangle"></div>
                     <ul>
                             <NavLink
-                                to="/vehiculos"
+                                to="/mercadofake-web/vehiculos"
                                 className={"opacity-50 pointer-events-none"}
                                 onClick={() => context.setSearchByCategory('Vehiculos')}
                             >
@@ -29,7 +29,7 @@ const CategoriesMenu = () => {
                         
                         
                             <NavLink
-                                to="/supermercado"
+                                to="/mercadofake-web/supermercado"
                                 className={"opacity-50 pointer-events-none"}
                                 onClick={() => context.setSearchByCategory('Supermecado')}
                             >
@@ -37,14 +37,14 @@ const CategoriesMenu = () => {
                             </NavLink>                          
                         
                             <NavLink
-                                to="/tecnologia"
+                                to="/mercadofake-web/tecnologia"
                                 onClick={() => context.setSearchByCategory('Tecnología')}
                             >
                                 <li className='category-item'>Tecnología</li>
                             </NavLink>
                         
                             <NavLink
-                                to="/electrodomesticos"
+                                to="/mercadofake-web/electrodomesticos"
                                 className={"opacity-50 pointer-events-none"}
                                 onClick={() => context.setSearchByCategory('Electrodomésticos')}
                             >
@@ -52,7 +52,7 @@ const CategoriesMenu = () => {
                             </NavLink>
                             
                             <NavLink
-                                to="/hogar-y-muebles"
+                                to="/mercadofake-web/hogar-y-muebles"
                                 className={"opacity-50 pointer-events-none"}
                                 onClick={() => context.setSearchByCategory('Hogar y muebles')}
                             >
@@ -60,7 +60,7 @@ const CategoriesMenu = () => {
                             </NavLink>
 
                             <NavLink
-                                to="/deportes-y-fitness"
+                                to="/mercadofake-web/deportes-y-fitness"
                                 className={"opacity-50 pointer-events-none"}
                                 onClick={() => context.setSearchByCategory('Hogar y muebles')}
                             >
@@ -68,14 +68,14 @@ const CategoriesMenu = () => {
                             </NavLink>    
 
                             <NavLink
-                                to="/moda"
+                                to="/mercadofake-web/moda"
                                 onClick={() => context.setSearchByCategory('Ropa')}
                             >
                                 <li className='category-item'>Moda</li>
                             </NavLink>
 
                             <NavLink
-                                to="/juegos-y-juguetes"
+                                to="/mercadofake-web/juegos-y-juguetes"
                                 onClick={() => context.setSearchByCategory('Juguetes')}
                             >
                                 <li className='category-item'>Juegos y juguetes</li>
@@ -83,7 +83,7 @@ const CategoriesMenu = () => {
                         
                         
                             <NavLink
-                                to="/herramientas"
+                                to="/mercadofake-web/herramientas"
                                 onClick={() => context.setSearchByCategory('Herramientas')}
                             >
                                 <li className='category-item'>Herramientas</li>

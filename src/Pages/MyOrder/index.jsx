@@ -14,7 +14,7 @@ function MyOrder() {
   return (
     <div className="flex flex-col w-[60%] h-[100vh] bg-[#EDEDED]  px-5 py-10">
       <div className="path text-left">
-        <Link to="/my-purchases">
+        <Link to="/mercadofake-web/my-purchases">
           <span className="hover:text-blue-500">Compras</span>
         </Link>
         <span> {">"} </span>

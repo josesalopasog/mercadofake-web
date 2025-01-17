@@ -71,7 +71,7 @@ const NavBar = () => {
             </div>
 
             <div className="row-start-2 col-start-1 flex justify-end items-center pr-11">
-                    <NavLink to="/">
+                    <NavLink to="/mercadofake-web/">
                         <div className="flex w-[120px]">
                             <MapPinIcon
                                 className=" size-11 text-black/60 mr-1"
@@ -98,28 +98,28 @@ const NavBar = () => {
                     </li>
                     <li className="nav-menu-time">
                         <NavLink
-                            to="/nothing-to-see"
+                            to="/mercadofake-web/nothing-to-see"
                         >
                             Ofertas
                         </NavLink>
                     </li>
                     <li className="nav-menu-time">
                         <NavLink
-                            to="/nothing-to-see"
+                            to="/mercadofake-web/nothing-to-see"
                         >
                             Cupones
                         </NavLink>
                     </li>
                     <li className="nav-menu-time">
                         <NavLink
-                            to="/nothing-to-see"
+                            to="/mercadofake-web/nothing-to-see"
                         >
                             Supermercado
                         </NavLink>
                     </li>
                     <li className="nav-menu-time">
                         <NavLink
-                            to="/moda"
+                            to="/mercadofake-web/moda"
                             onClick={() => context.setSearchByCategory('Ropa')}
                         >
                             Moda
@@ -127,21 +127,21 @@ const NavBar = () => {
                     </li>
                     <li className="nav-menu-time sm:block">
                         <NavLink
-                            to="/nothing-to-see"
+                            to="/mercadofake-web/nothing-to-see"
                         >
                             Mercado Play
                         </NavLink>
                     </li>
                     <li className="nav-menu-time hidden sm:block">
                         <NavLink
-                            to="/nothing-to-see"
+                            to="/mercadofake-web/nothing-to-see"
                         >
                             Vender
                         </NavLink>
                     </li>
                     <li className="nav-menu-time hidden sm:block">
                         <NavLink
-                            to="/ayuda"
+                            to="/mercadofake-web/ayuda"
                         >
                             Ayuda
                         </NavLink>
@@ -151,13 +151,13 @@ const NavBar = () => {
             <div className="row-start-2 col-start-3 flex justify-start items-center pl-7">
                 <ul className=" flex items-center gap-2">
                     <li>
-                        <NavLink to="/registration">Crea tu cuenta</NavLink>
+                        <NavLink to="/mercadofake-web/registration">Crea tu cuenta</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/sign-in">Ingresa</NavLink>
+                        <NavLink to="/mercadofake-web/sign-in">Ingresa</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/my-purchases">Mis Compras</NavLink>
+                        <NavLink to="/mercadofake-web/my-purchases">Mis Compras</NavLink>
                     </li>
                     <li>
                         <div className="flex absolute top-[70px]">
