@@ -7,6 +7,7 @@ import {
     ChevronDownIcon
 } from "@heroicons/react/24/outline";
 import CartContext from "../../Context/CartContext";
+import logo from "../../Assets/logo-mercadofake.png"
 
 const NavBar = () => {
     const context = useContext(CartContext);
@@ -31,7 +32,7 @@ const NavBar = () => {
             <div className="row-start-1 col-start-1 flex justify-end items-center">
                 <NavLink to="/mercadofake-web/">
                     <img
-                        src={`${import.meta.env.BASE_URL}img/logo-mercadofake.png`}
+                        src={logo}
                         alt="mercadofake-logo"
                         width="180px"
                     />
