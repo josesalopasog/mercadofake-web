@@ -18,7 +18,7 @@ const NavBar = () => {
             return;
         }
         context.setSearchByTitle(context.searchQuery); // Ejecuta el filtrado al hacer clic
-        navigate("/search-list");
+        navigate("/mercadofake-web/search-list");
     };
 
     const handleKeyDown = (event) => {
