@@ -21,7 +21,7 @@ const CategoriesMenu = () => {
                     <ul>
                             <NavLink
                                 to="/vehiculos"
-
+                                className={"opacity-50 pointer-events-none"}
                                 onClick={() => context.setSearchByCategory('Vehiculos')}
                             >
                                 <li className='category-item'>Vehiculos</li>
@@ -29,13 +29,12 @@ const CategoriesMenu = () => {
                         
                         
                             <NavLink
-                                to="/vehiculos"
-
-                                onClick={() => context.setSearchByCategory('Vehiculos')}
+                                to="/supermercado"
+                                className={"opacity-50 pointer-events-none"}
+                                onClick={() => context.setSearchByCategory('Supermecado')}
                             >
-                                <li className='category-item'>Supermecado</li>
+                                <li className='category-item '>Supermecado</li>
                             </NavLink>                          
-                        
                         
                             <NavLink
                                 to="/tecnologia"
@@ -44,7 +43,30 @@ const CategoriesMenu = () => {
                                 <li className='category-item'>Tecnología</li>
                             </NavLink>
                         
-                        
+                            <NavLink
+                                to="/electrodomesticos"
+                                className={"opacity-50 pointer-events-none"}
+                                onClick={() => context.setSearchByCategory('Electrodomésticos')}
+                            >
+                                <li className='category-item '>Electrodomésticos</li>
+                            </NavLink>
+                            
+                            <NavLink
+                                to="/hogar-y-muebles"
+                                className={"opacity-50 pointer-events-none"}
+                                onClick={() => context.setSearchByCategory('Hogar y muebles')}
+                            >
+                                <li className='category-item '>Hogar y muebles</li>
+                            </NavLink>
+
+                            <NavLink
+                                to="/deportes-y-fitness"
+                                className={"opacity-50 pointer-events-none"}
+                                onClick={() => context.setSearchByCategory('Hogar y muebles')}
+                            >
+                                <li className='category-item '>Deportes y Fitness</li>
+                            </NavLink>    
+
                             <NavLink
                                 to="/moda"
                                 onClick={() => context.setSearchByCategory('Ropa')}

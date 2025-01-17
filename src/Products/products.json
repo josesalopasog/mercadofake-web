@@ -78,5 +78,46 @@
             "https://http2.mlstatic.com/D_NQ_NP_657560-MLU78757285993_082024-O.webp"
         ],
         "category": "Herramientas"
+    },
+    {
+        "id": 9,
+        "title": "Juego Gonggi Game Juego Del Calamar",
+        "description": "Gonggi Game es un emocionante juego de destreza diseñado para niños de 5 a 7 años, que ofrece horas de diversión y entretenimiento. Inspirado en la popular serie de televisión, este juego fomenta la coordinación y la agilidad, convirtiéndose en una excelente opción para desarrollar habilidades motoras en los más pequeños.",
+        "price": 12,
+        "images": [
+            "https://http2.mlstatic.com/D_NQ_NP_704947-MCO81547767994_012025-O.webp"
+        ],
+        "category": "Juguetes"
+    },
+    {
+        "id": 10,
+        "title": "Kit 30 Experimentos Ciencia Steam Niñas Niños",
+        "description": "Vapor (ciencia, tecnología, ingeniería, arte, matemáticas). ¡descubre la diversión y la emoción de la ciencia en tu vida cotidiana! Llevar a cabo más de 30 interesantes experimentos divertidos para aprender algunos principios científicos detrás de ellos. Hacer un reloj que es alimentado por la fruta, crear una fuente de agua dentro de una botella, conducir a un buzo para moverse hacia arriba y hacia abajo sin tocarlo, construir un aerotavoz con un CD, construir un modelo de ciclo de agua mini en un vaso y más…",
+        "price": 50,
+        "images": [
+            "https://http2.mlstatic.com/D_NQ_NP_789161-MCO45568077183_042021-O.webp"
+        ],
+        "category": "Juguetes"   
+    },
+    {
+        "id": 11,
+        "title": "Procesador Amd Ryzen 7 7700 Am5 5.3ghz Ddr5 Pc C/video",
+        "description": "El AMD Ryzen 7 7700 es un procesador de alto rendimiento diseñado para la plataforma AM5, ideal para entusiastas y gamers. Ofrece una velocidad máxima de hasta 5.3 GHz, tecnología DDR5 para un rendimiento avanzado, y gráficos integrados, eliminando la necesidad de una tarjeta de video dedicada en configuraciones básicas. Perfecto para tareas multitarea, productividad y gaming de última generación.",
+        "price": 400,
+        "images": [
+            "https://http2.mlstatic.com/D_NQ_NP_917050-MLA54203158229_032023-O.webp"
+        ],
+        "category": "Tecnología"   
+    },
+    {
+        "id": 12,
+        "title": "Stanley 94-374 Kit de 123 herramientas",
+        "description": "El Stanley 94-374 es un completo kit de 123 herramientas combinadas diseñado para satisfacer las necesidades tanto de profesionales como de aficionados al bricolaje. Fabricado con materiales duraderos y de alta calidad, cuenta con una variedad de herramientas esenciales como llaves, alicates, destornilladores, y más, organizadas en un práctico estuche. Su diseño en color plateado garantiza una apariencia elegante y profesional. Ideal para proyectos en el hogar, el taller o el trabajo diario.",
+        "price": 40,
+        "images": [
+            "https://http2.mlstatic.com/D_NQ_NP_767341-MLU77817590831_072024-O.webp"
+        ],
+        "category": "Herramientas"   
     }
+
 ]
