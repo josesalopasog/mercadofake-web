@@ -27,7 +27,7 @@ const NavBar = () => {
     };
 
     return (
-        <nav className=" grid grid-rows-2 grid-cols-[1fr,auto,1fr] w-[100%] bg-[#FFE600] text-[14px] py-[10px]">
+        <nav className=" grid grid-rows-2 grid-cols-[auto,auto,auto] w-[100%] bg-[#FFE600] text-[14px] py-[10px]">
             <div className="row-start-1 col-start-1 flex justify-end items-center">
                 <NavLink to="/">
                     <img
@@ -41,7 +41,7 @@ const NavBar = () => {
                 <div className="relative flex w-[565px] h-[50px] p-1 rounded-md overflow-hidden">   
                     <input
                         type="text"
-                        className="w-[90%] h-[40px] flex-grow p-5 pr-11 focus:outline-blue-500"
+                        className="h-[40px] flex-grow p-5 pr-11 focus:outline-blue-500"
                         placeholder="Buscar productos, marcas y más..."
                         onChange={(event) => context.setSearchQuery(event.target.value)}
                         onKeyDown={(event) => handleKeyDown(event)}
@@ -86,7 +86,7 @@ const NavBar = () => {
             </div>
 
             <div className="row-start-2 col-start-2 flex justify-center items-center">
-                <ul className=" flex items-center gap-4 cursor-pointer">
+                <ul className=" flex items-center gap-4 cursor-pointer max-sm:12 ">
                     <li 
                         ref={context.categoriesNavRef}
                         className="flex flex-row nav-menu-time"
@@ -98,21 +98,21 @@ const NavBar = () => {
                     </li>
                     <li className="nav-menu-time">
                         <NavLink
-                            to="/ofertas"
+                            to="/nothing-to-see"
                         >
                             Ofertas
                         </NavLink>
                     </li>
                     <li className="nav-menu-time">
                         <NavLink
-                            to="/cupones"
+                            to="/nothing-to-see"
                         >
                             Cupones
                         </NavLink>
                     </li>
                     <li className="nav-menu-time">
                         <NavLink
-                            to="/supermercado"
+                            to="/nothing-to-see"
                         >
                             Supermercado
                         </NavLink>
@@ -127,14 +127,14 @@ const NavBar = () => {
                     </li>
                     <li className="nav-menu-time sm:block">
                         <NavLink
-                            to="/"
+                            to="/nothing-to-see"
                         >
                             Mercado Play
                         </NavLink>
                     </li>
                     <li className="nav-menu-time hidden sm:block">
                         <NavLink
-                            to="/publicar"
+                            to="/nothing-to-see"
                         >
                             Vender
                         </NavLink>
@@ -151,7 +151,7 @@ const NavBar = () => {
             <div className="row-start-2 col-start-3 flex justify-start items-center pl-7">
                 <ul className=" flex items-center gap-2">
                     <li>
-                        <NavLink to="/">Crea tu cuenta</NavLink>
+                        <NavLink to="/registration">Crea tu cuenta</NavLink>
                     </li>
                     <li>
                         <NavLink to="/sign-in">Ingresa</NavLink>

@@ -17,8 +17,13 @@ import Clothes from '../Categories/Clothes'
 import Technology from '../Categories/Technology'
 import Games from '../Categories/Games'
 import Tools from '../Categories/Tools'
+import CreateAccount from '../CreateAccount'
+import GoBackHome from '../GoBackHome'
+import Help from '../Help'
 
 import './App.css'
+
+
 
 const AppRoutes = () => {
   let  routes = useRoutes([
@@ -33,8 +38,11 @@ const AppRoutes = () => {
     {path: '/my-profile', element: <MyProfile />},
     {path: '/my-cart', element: <MyCart />},
     {path: '/not-found', element: <NotFound />},
+    {path: '/nothing-to-see', element: <GoBackHome/>},
     {path: '/sign-in', element: <SignIn />},
-    {path: '/search-list', element: <SearchList/>}
+    {path: '/registration', element: <CreateAccount/>},
+    {path: '/search-list', element: <SearchList/>},
+    {path: '/ayuda', element: <Help />}
   ]);  
 
   return routes

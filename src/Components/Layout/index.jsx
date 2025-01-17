@@ -6,14 +6,14 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#EDEDED]  h-[100vh]">
+    <div className="flex flex-col items-center bg-[#EDEDED] min-h-screen ">
       {/* Contenido principal */}
-      <main className="flex flex-col h-[100%] w-[100%] items-center">
+      <main className="flex flex-col flex-grow w-full items-center">
         {children}
       </main>
 
       {/* Footer */}
-      <footer className="flex flex-col bg-white text-black/50 py-4 text-center w-[100%] ">
+      <footer className="flex flex-col bg-white text-black/50 py-4 text-center w-full ">
         <p>© 2025 Bogotá, Colombia.</p>
         <p>Made by José Salopaso</p>
       </footer>

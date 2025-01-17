@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <div className="flex flex-col h-[100%] w-[100%] items-center">
-      <div className="flex flex-wrap justify-center mt-10">
+      <div className="flex flex-wrap justify-center my-10 max-w-[70%] ">
         {
           context.items?.map(item => (
             <Card 
