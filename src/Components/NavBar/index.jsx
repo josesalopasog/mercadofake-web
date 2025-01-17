@@ -29,9 +29,9 @@ const NavBar = () => {
     return (
         <nav className=" grid grid-rows-2 grid-cols-[auto,auto,auto] w-[100%] bg-[#FFE600] text-[14px] py-[10px]">
             <div className="row-start-1 col-start-1 flex justify-end items-center">
-                <NavLink to="/">
+                <NavLink to="/mercadofake-web/">
                     <img
-                        src="\img\logo-mercadofake.png"
+                        src="public/img/logo-mercadofake.png"
                         alt="mercadofake-logo"
                         width="180px"
                     />
