@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import CartContext from "../CartContext";
-
+import data from "../../Products/products.json";
 
 export const CartProvider = ( { children }) => {
     //Shopping Cart · Count
@@ -52,20 +52,23 @@ export const CartProvider = ( { children }) => {
         children: PropTypes.node.isRequired,
     }
 
-    useEffect(() => {
-        // fetch("https://api.escuelajs.co/api/v1/products")
-        fetch("src/Products/products.json")
-          .then((response) => {
-            if(!response.ok){
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json()
-          })
-          .then((data) => {
-            setItems(data);
-            // console.log('Datos recibidos: ', data);
-          })
-          .catch((error) => console.error('Error al cargar los datos:', error));
+    // useEffect(() => {
+    //     fetch("https://api.escuelajs.co/api/v1/products")
+    //       .then((response) => {
+    //         if(!response.ok){
+    //           throw new Error(`HTTP error! Status: ${response.status}`);
+    //         }
+    //         return response.json()
+    //       })
+    //       .then((data) => {
+    //         setItems(data);
+    //         // console.log('Datos recibidos: ', data);
+    //       })
+    //       .catch((error) => console.error('Error al cargar los datos:', error));
+    //   }, []);
+
+      useEffect(() => {
+        setItems(data);
       }, []);
 
       const filteredItemsByTitle = (items, searchByTitle) =>{
