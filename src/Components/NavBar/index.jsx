@@ -31,7 +31,7 @@ const NavBar = () => {
             <div className="row-start-1 col-start-1 flex justify-end items-center">
                 <NavLink to="/mercadofake-web/">
                     <img
-                        src="public/img/logo-mercadofake.png"
+                        src="/mercadofake-web/img/logo-mercadofake.png"
                         alt="mercadofake-logo"
                         width="180px"
                     />
